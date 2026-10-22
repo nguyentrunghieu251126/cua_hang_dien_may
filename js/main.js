@@ -13,7 +13,7 @@ document.querySelectorAll(".add-cart").forEach((btn) => {
     void cartLink.offsetWidth;
     cartLink.classList.add("bump");
 
-    const name = btn.closest(".product-card, .hero-slide").querySelector("h6, h2").textContent;
+    const name = btn.closest(".product-card").querySelector("h6").textContent;
     toastMsg.textContent = `Đã thêm "${name}" vào giỏ hàng!`;
     toast.show();
   });

@@ -138,8 +138,8 @@ a {
   --c: var(--primary);
   --soft: #e8f5ec;
   position: relative;
-  height: 460px;
-  padding: 48px 64px 124px;
+  height: 480px;
+  padding: 44px 64px 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -147,7 +147,7 @@ a {
   overflow: hidden;
   background:
     radial-gradient(600px 400px at 78% 40%, var(--soft), transparent 70%),
-    linear-gradient(120deg, #fff 30%, var(--soft));
+    linear-gradient(120deg, #fcfcfd 35%, var(--soft));
 }
 /* Tên danh mục cỡ lớn làm nền */
 .hero-slide::after {
@@ -162,13 +162,13 @@ a {
   text-transform: uppercase;
   white-space: nowrap;
   color: transparent;
-  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--c) 18%, transparent);
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--c) 14%, transparent);
   pointer-events: none;
 }
 .hero-text {
   position: relative;
   z-index: 1;
-  max-width: 50%;
+  max-width: 52%;
 }
 .hero-tag {
   display: inline-flex;
@@ -193,78 +193,70 @@ a {
   font-size: 0.85rem;
 }
 .hero-text h2 {
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.03em;
-  margin: 18px 0 14px;
+  color: #1e293b;
+  margin: 16px 0 10px;
 }
-.hero-specs {
+.hero-text p {
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.hero-perks {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px 18px;
   list-style: none;
   padding: 0;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
 }
-.hero-specs li {
-  padding: 4px 12px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid color-mix(in srgb, var(--c) 20%, transparent);
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-.hero-price {
+.hero-perks li {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 22px;
-}
-.hero-price .price {
-  font-size: 1.8rem;
-  letter-spacing: -0.02em;
-}
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.btn-hero,
-.btn-ghost {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.92rem;
-  transition: all 0.2s;
+  gap: 6px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #475569;
+}
+.hero-perks li::before {
+  content: "\F26E";
+  font-family: "bootstrap-icons";
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--c) 15%, #fff);
+  color: var(--c);
+  font-size: 0.8rem;
 }
 .btn-hero {
-  border: 0;
-  background: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  background: #1e293b;
   color: #fff;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.25s;
 }
 .btn-hero:hover {
   background: var(--c);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -10px var(--c);
+  box-shadow: 0 12px 24px -12px var(--c);
 }
-.btn-ghost {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid #e5e7eb;
+.btn-hero i {
+  transition: transform 0.25s;
 }
-.btn-ghost:hover {
-  color: var(--c);
-  border-color: var(--c);
-}
-.btn-ghost i {
-  transition: transform 0.2s;
-}
-.btn-ghost:hover i {
-  transform: translateX(3px);
+.btn-hero:hover i {
+  transform: translateX(4px);
 }
 
 /* Hình sản phẩm */
@@ -312,26 +304,26 @@ a {
   top: 18px;
   right: -6px;
   padding: 8px 14px;
-  background: var(--danger);
+  background: var(--c);
   color: #fff;
-  font-weight: 800;
-  font-size: 1.05rem;
-  transform: rotate(8deg);
-}
-.chip-rate {
-  bottom: 30px;
-  left: -28px;
-  padding: 8px 14px;
-  background: #fff;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  transform: rotate(6deg);
 }
-.chip-rate i {
-  color: #ffb400;
+.chip-info {
+  bottom: 30px;
+  left: -36px;
+  padding: 9px 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
-.chip-rate small {
-  color: var(--muted);
-  font-weight: 500;
+.chip-info i {
+  color: var(--c);
+  margin-right: 4px;
 }
 @keyframes float {
   50% {
@@ -345,22 +337,28 @@ a {
 }
 
 /* Hiệu ứng xuất hiện khi đổi slide */
-.carousel-item.active .hero-text > * {
+/* Chạy ngay khi slide mới bắt đầu hiện (next/prev), không đợi tới lúc có .active
+   để tránh nội dung hiện ra rồi bị ẩn và chạy lại */
+.hero .carousel-item.active .hero-text > *,
+.hero .carousel-item-next .hero-text > *,
+.hero .carousel-item-prev .hero-text > * {
   animation: rise 0.6s ease both;
 }
-.carousel-item.active .hero-text > :nth-child(2) {
+.hero .carousel-item .hero-text > :nth-child(2) {
   animation-delay: 0.06s;
 }
-.carousel-item.active .hero-text > :nth-child(3) {
+.hero .carousel-item .hero-text > :nth-child(3) {
   animation-delay: 0.12s;
 }
-.carousel-item.active .hero-text > :nth-child(4) {
+.hero .carousel-item .hero-text > :nth-child(4) {
   animation-delay: 0.18s;
 }
-.carousel-item.active .hero-text > :nth-child(5) {
+.hero .carousel-item .hero-text > :nth-child(5) {
   animation-delay: 0.24s;
 }
-.carousel-item.active .hero-visual {
+.hero .carousel-item.active .hero-visual,
+.hero .carousel-item-next .hero-visual,
+.hero .carousel-item-prev .hero-visual {
   animation: pop 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
 }
 @keyframes rise {
@@ -410,7 +408,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: var(--muted);
+  color: #64748b;
   font-size: 0.85rem;
   font-weight: 600;
   white-space: nowrap;
@@ -420,13 +418,13 @@ a {
   font-size: 1.15rem;
 }
 .hero .hero-cats [data-bs-target]:hover {
-  color: var(--text);
+  color: #1e293b;
   background: rgba(15, 23, 42, 0.05);
 }
 .hero .hero-cats .active,
 .hero .hero-cats .active:hover {
   color: #fff;
-  background: var(--text);
+  background: #1e293b;
 }
 /* Vạch tiến trình chạy theo thời gian slide */
 .hero .hero-cats .active::after {
@@ -435,7 +433,7 @@ a {
   left: 0;
   bottom: 0;
   height: 3px;
-  background: var(--accent);
+  background: rgba(255, 255, 255, 0.55);
   animation: catFill 5s linear forwards;
 }
 @keyframes catFill {
@@ -452,7 +450,7 @@ a {
     padding: 40px 44px 116px;
   }
   .hero-text h2 {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
   .hero-visual {
     width: 260px;
@@ -465,7 +463,7 @@ a {
 }
 @media (max-width: 991.98px) {
   .hero-slide {
-    height: 430px;
+    height: 470px;
     padding: 36px 32px 100px;
   }
   .hero-slide::after {
@@ -482,7 +480,7 @@ a {
   .hero-icon {
     font-size: 6rem;
   }
-  .chip-rate {
+  .chip-info {
     left: -20px;
     bottom: 10px;
   }
@@ -500,7 +498,7 @@ a {
     border-radius: 20px;
   }
   .hero-slide {
-    height: 440px;
+    height: 520px;
     padding: 26px 22px 92px;
     align-items: flex-start;
   }
@@ -513,10 +511,10 @@ a {
     max-width: 100%;
   }
   .hero-text h2 {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
   }
-  .hero-price .price {
-    font-size: 1.45rem;
+  .hero-text p {
+    font-size: 0.9rem;
   }
   /* Thu nhỏ hình, đặt góc phải trên */
   .hero-visual {
