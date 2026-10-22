@@ -286,12 +286,16 @@ a {
   border: 1.5px dashed color-mix(in srgb, var(--c) 30%, transparent);
   animation: spin 40s linear infinite;
 }
-.hero-icon {
+/* Ảnh PNG nền trong suốt, cho phép tràn nhẹ ra ngoài vòng tròn */
+.hero-img {
   position: relative;
   z-index: 1;
-  font-size: 9rem;
-  color: var(--c);
-  filter: drop-shadow(0 18px 20px color-mix(in srgb, var(--c) 35%, transparent));
+  width: auto;
+  height: auto;
+  max-width: 120%;
+  max-height: 112%;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 24px rgba(15, 23, 42, 0.22));
   animation: float 5s ease-in-out infinite;
 }
 .hero-chip {
@@ -299,16 +303,6 @@ a {
   z-index: 2;
   border-radius: 14px;
   box-shadow: 0 12px 28px -10px rgba(15, 23, 42, 0.35);
-}
-.chip-off {
-  top: 18px;
-  right: -6px;
-  padding: 8px 14px;
-  background: var(--c);
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-  transform: rotate(6deg);
 }
 .chip-info {
   bottom: 30px;
@@ -457,9 +451,6 @@ a {
     height: 260px;
     margin-right: 16px;
   }
-  .hero-icon {
-    font-size: 7.5rem;
-  }
 }
 @media (max-width: 991.98px) {
   .hero-slide {
@@ -476,9 +467,6 @@ a {
     width: 200px;
     height: 200px;
     margin-right: 8px;
-  }
-  .hero-icon {
-    font-size: 6rem;
   }
   .chip-info {
     left: -20px;
@@ -528,9 +516,6 @@ a {
   .hero-visual::after,
   .hero-chip {
     display: none;
-  }
-  .hero-icon {
-    font-size: 1.9rem;
   }
   .hero .hero-cats {
     left: 12px;
