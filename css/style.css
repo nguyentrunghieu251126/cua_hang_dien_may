@@ -286,14 +286,15 @@ a {
   border: 1.5px dashed color-mix(in srgb, var(--c) 30%, transparent);
   animation: spin 40s linear infinite;
 }
-/* Ảnh PNG nền trong suốt, cho phép tràn nhẹ ra ngoài vòng tròn */
+/* Ảnh PNG nền trong suốt: khung cố định quanh vòng tròn (tràn nhẹ 2 bên),
+   object-fit giữ ảnh ngang lẫn dọc luôn nằm gọn, không đè lên thanh danh mục */
 .hero-img {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  width: auto;
-  height: auto;
-  max-width: 120%;
-  max-height: 112%;
+  left: -12%;
+  top: -4%;
+  width: 124%;
+  height: 104%;
   object-fit: contain;
   filter: drop-shadow(0 24px 24px rgba(15, 23, 42, 0.22));
   animation: float 5s ease-in-out infinite;
